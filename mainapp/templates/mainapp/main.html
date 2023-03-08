@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block scripts %}
+    <script src="{% static 'main.js' %}" defer></script>
+{% endblock scripts %}
+
+{% block content %}
+    <div class="w-100 text-center">
+        <form action="" id="search-form" autocomplete="off">
+            {% csrf_token %}
+            <input type="text" id="search-input" class="p-3 w-50 search" placeholder="search text">
+        </form>
+        <div id="results-box" class="results-cards not-visible"></div>
+    </div>
+{% endblock content %}
